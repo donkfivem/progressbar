@@ -83,8 +83,6 @@ end
 local function disableControls()
     CreateThread(function()
         while isDoingAction do
-            TriggerEvent("rp:CloseMenu")
-            TriggerEvent("dp:CloseMenu")
             for disableType, isEnabled in pairs(Action.controlDisables) do
                 if isEnabled and controls[disableType] then
                     for _, control in ipairs(controls[disableType]) do
@@ -252,6 +250,10 @@ local function isDoingSomething()
     return isDoingAction
 end
 exports('isDoingSomething', isDoingSomething)
+
+
+
+
 
 -- Debug
 -- Assuming QBCore and QBCore.Functions.Progressbar are available
